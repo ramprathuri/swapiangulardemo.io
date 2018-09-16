@@ -1,0 +1,15 @@
+
+<div class="row">
+    <img src="../../assets/preloader.gif" width="100" height="100" alt="" *ngIf="isLoading">
+
+</div>
+<div class="jumbotron">
+
+    <h1 class="display-4">{{planet.name}}</h1>
+    <p class="lead">Diameter: {{planet.diameter}}</p>
+    <hr class="my-4">
+    <p>Terrain: {{planet.terrain}}</p>
+    <p class="lead">
+      <a class="btn btn-primary btn-lg" [routerLink]="['/planets']" role="button">Back</a>
+    </p>
+  </div>

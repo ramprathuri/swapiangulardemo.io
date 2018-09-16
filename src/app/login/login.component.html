@@ -1,0 +1,38 @@
+
+<form class="form-signin" [formGroup]='loginForm' (ngSubmit)="singIn()">
+
+  <h2 class="form-signin-heading">Please sign in</h2>
+  <div *ngIf='invalidCredentials' class="alert alert-danger">
+    Invalid username and/or password
+  </div>
+
+  <div class="form-group">
+    <label for="username" class="sr-only">Username</label>
+    <input type="text" id="username" formControlName="username" class="form-control" placeholder="Username" autofocus>
+  </div>
+  <div *ngIf="username.touched && username.invalid" class="alert alert-danger">
+      Username is required!
+
+  </div>
+  <div class="form-group">
+    <label for="inputPassword" class="sr-only">Password</label>
+    <input type="password" id="inputPassword" class="form-control" placeholder="Password" formControlName="password">
+  </div>
+  <div *ngIf="password.touched && password.invalid" class="alert alert-danger">
+    <!-- <div *ngIf="password.errors.Invalid"]>  Password is required! </div> -->
+
+    Password is required!
+
+      </div>
+
+      <div class="form-group">
+
+            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </div>
+      <div class="form-group">
+          <img src="../../assets/preloader.gif" width="100" height="100" alt="" *ngIf="isLoading">
+
+    </div>
+
+  <!-- <span><img src="../../assets/preloader.gif" width="100" height="100" alt="" *ngIf="isLoading"></span> -->
+</form>
